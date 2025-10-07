@@ -136,3 +136,15 @@ os_disk {
 }
 # NOTE: The azurerm provider does not always expose every nested ARM property (eg. personalDesktopAssignmentType).
 # If you need to set ARM-only properties at hostPool level, use azapi_resource (example below).
+# source_image_reference {
+#   publisher = "MicrosoftWindowsDesktop"
+#   offer     = "windows-11"
+#   sku       = "win11-22h2-avd"   # Windows 11 Enterprise multi-session
+#   version   = "latest"
+# }
+# source_image_reference {
+#   publisher = "MicrosoftWindowsDesktop"
+#   offer     = "windows-10"
+#   sku       = "19h2-evd-multisession"
+#   version   = "latest"
+# }

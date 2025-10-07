@@ -4,20 +4,16 @@ resource "azapi_resource" "hostpool_raw" {
   parent_id = azurerm_resource_group.rg.id
   location  = azurerm_resource_group.rg.location
 
-  body = jsonencode({
+  body = {
     location = azurerm_resource_group.rg.location
     properties = {
       friendlyName               = var.host_pool_name
       description                = "AVD host pool created via azapi"
-      hostPoolType               = var.host_pool_type
-      loadBalancerType           = "BreadthFirst"
-      preferredAppGroupType      = "Desktop"
+      hostPoolType               = var.host_pool_type           # "Pooled" or "Personal"
+      loadBalancerType           = "BreadthFirst"              # "BreadthFirst" | "DepthFirst" | "Persistent"
+      preferredAppGroupType      = "Desktop"                   # "Desktop" | "RemoteApp"
       personalDesktopAssignmentType = var.host_pool_type == "Personal" ? "Automatic" : null
-      # Optional: ring (used for upgrade rings), registrationInfo, etc.
+      # Optional: ring, registrationInfo, etc.
     }
-  })
-
-   # update_method is optional and only supported for modifying existing resources
-  # remove it if creating a new host pool
-  # update_method = "PUT"
+  }
 }

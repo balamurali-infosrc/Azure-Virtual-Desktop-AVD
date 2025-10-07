@@ -118,8 +118,8 @@ resource "azurerm_windows_virtual_machine" "session_vm" {
 
   source_image_reference {
     publisher = "MicrosoftWindowsDesktop"
-    offer     = "windows-10"
-    sku       = "19h2-evd-multisession"
+    offer     = "windows-11"
+    sku       = "win11-22h2-avd"  # Enterprise multi-session
     version   = "latest"
   }
 

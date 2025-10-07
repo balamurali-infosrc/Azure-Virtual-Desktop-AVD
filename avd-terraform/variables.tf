@@ -89,3 +89,18 @@ variable "os_disk_size_gb" {
   type    = number
   default = 128
 }
+# variable "image_publisher" {
+#   default = "MicrosoftWindowsDesktop"
+# }
+
+# variable "image_offer" {
+#   default = "windows-11"
+# }
+
+# variable "image_sku" {
+#   default = "win11-22h2-avd" # Enterprise multi-session for AVD
+# }
+
+# variable "image_version" {
+#   default = "latest"
+# }

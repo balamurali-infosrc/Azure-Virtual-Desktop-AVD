@@ -117,10 +117,10 @@ resource "azurerm_windows_virtual_machine" "session_vm" {
   network_interface_ids = [azurerm_network_interface.session_nic[count.index].id]
 
   source_image_reference {
-    publisher = var.image_publisher
-    offer     = var.image_offer
-    sku       = var.image_sku
-    version   = var.image_version
+    publisher = "MicrosoftWindowsDesktop"
+    offer     = "windows-10"
+    sku       = "19h2-evd-multisession"
+    version   = "latest"
   }
 
 # Then in your VM resource:

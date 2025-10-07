@@ -5,7 +5,7 @@ resource "azapi_resource" "hostpool_raw" {
   location  = azurerm_resource_group.rg.location
 
   body = {
-    location = azurerm_resource_group.rg.location
+    # location = azurerm_resource_group.rg.location
     properties = {
       friendlyName               = var.host_pool_name
       description                = "AVD host pool created via azapi"
